@@ -1601,74 +1601,28 @@ TPU / GPU 可以保留成一个轻例子：
 - `如果想直接按时间轴讲，可以压成这样`
 
 - 0. `2022 之前：只有零件，没有今天这个名字`
-- 更准确地说，那时已经有了 runtime 的前身零件：
-- workflow / automation
-- RPA / UI automation
-- sandbox / code execution environment
-- CI runner / notebook / container
-- 只是它们还没有被大模型统一接起来
+- 更准确地说，那时已经有了 runtime 的前身零件：workflow / automation、RPA / UI automation、sandbox / code execution environment、CI runner / notebook / container，只是它们还没有被大模型统一接起来。
 
 1. `2022：先有概念拐点，再有框架起点`
-- `2022-10-06`
-- ReAct 论文提出 reason + act 的经典抽象
-- 同月前后，LangChain 启动，开始把 chain / tool / memory / agent executor 框架化
+- `2022-10-06` ReAct 论文提出 reason + act 的经典抽象；同月前后，LangChain 启动，开始把 chain / tool / memory / agent executor 框架化。
 
 2. `2023：第一波 agent 热潮出现`
-- `2023-03`
-- LangChain + Zapier NLA
-- BabyAGI
-- `2023-03-30`
-- HuggingGPT
-- AutoGPT
-- 这一阶段最重要的变化是：
-- 大家第一次大规模把“长任务、task list、tool use、autonomous agent”讲成一件事
+- `2023-03` 的 LangChain + Zapier NLA、BabyAGI，以及 `2023-03-30` 前后的 HuggingGPT、AutoGPT，让大家第一次大规模把“长任务、task list、tool use、autonomous agent”讲成一件事。
 
 3. `2024：从 chain 走向 stateful orchestration`
-- LangGraph 代表这一阶段
-- 重点不再只是 chain
-- 而是：
-- graph
-- state
-- long-running agents
-- 这说明 runtime 开始真正从“prompt chaining”走向“任务系统”
+- LangGraph 代表这一阶段，重点不再只是 chain，而是 graph、state、long-running agents；这说明 runtime 开始真正从“prompt chaining”走向“任务系统”。
 
 4. `2024：hosted app agent 开始产品化`
-- `2024-09-16`
-- Replit 发布 Replit Agent
-- 这是很早一批把“从描述目标到生成并部署应用”做成产品的例子
-- 这一阶段的特点是：
-- agent 先长在托管环境里
-- 环境、依赖、部署都由平台控制
+- `2024-09-16` Replit 发布 Replit Agent，这是很早一批把“从描述目标到生成并部署应用”做成产品的例子；这一阶段的特点是 agent 先长在托管环境里，环境、依赖、部署都由平台控制。
 
 5. `2025 上半年：CLI agent 开始先跑在个人电脑上`
-- `2025-03-27`
-- Anthropic 已经公开把 Claude Code 当作“first AI agent”对外讲
-- 这条路线的关键不是 sandbox
-- 而是先借用：
-- 你的终端
-- 你的代码仓库
-- 你的 shell
-- 你的本地开发环境
-- 也就是说，早期强 agent 往往先拥有比 sandbox 更大的本地权限
+- `2025-03-27` Anthropic 已经公开把 Claude Code 当作“first AI agent”对外讲。这条路线的关键不是 sandbox，而是先借用你的终端、代码仓库、shell 和本地开发环境；也就是说，早期强 agent 往往先拥有比 sandbox 更大的本地权限。
 
 6. `2025 上半年：cloud agent 也开始成立`
-- `2025-05-16`
-- OpenAI 发布 Codex research preview
-- 明确把 coding agent 往 cloud-based software engineering agent 推
-- 这说明另一条路线也同时成立：
-- agent 不一定只借用你的本地环境
-- 也可以开始拥有自己独立的远程执行环境
+- `2025-05-16` OpenAI 发布 Codex research preview，明确把 coding agent 往 cloud-based software engineering agent 推；这说明另一条路线也同时成立：agent 不一定只借用你的本地环境，也可以开始拥有自己独立的远程执行环境。
 
 7. `2025 下半年：sandbox 开始从可选项变成刚需`
-- `2025-10-20`
-- Anthropic 专门发文讲 Claude Code sandboxing
-- 这个时间点很关键
-- 它说明行业已经从“先让 agent 能跑”
-- 走到了“必须把它跑在边界更清楚的环境里”
-- 也就是说：
-- 本地高权限 agent 先跑起来
-- 但随着任务变长、动作变重、风险变高
-- sandbox 才逐渐成为硬需求
+- `2025-10-20` Anthropic 专门发文讲 Claude Code sandboxing。这个时间点很关键，它说明行业已经从“先让 agent 能跑”走到了“必须把它跑在边界更清楚的环境里”；也就是说，本地高权限 agent 先跑起来，但随着任务变长、动作变重、风险变高，sandbox 才逐渐成为硬需求。
 
 8. `2025 下半年到 2026：cloud agent / parallel agent / command center 继续成熟`
 - `2025-10-06` Codex GA，开始更明确地讲 cloud agent、Slack integration、Codex SDK、admin tools；`2026-04-16` OpenAI 再把 Codex 推到 “for (almost) everything”。背后反映的是：agent 不再只是一个 terminal helper，而是在往多 agent、长任务、后台常驻、跨工具协作发展。
@@ -1799,11 +1753,9 @@ TPU / GPU 可以保留成一个轻例子：
 关于 Hermes 这条线：
 - Hermes 的爆点之一，是把 memory / self-improving / the agent that grows with you 这套叙事推到了更前面。它更强调跨会话记忆、用户画像、技能沉淀、代理自我改进；这套说法非常容易击中“AI 终于不再失忆了”的大众痛点。
 
-这一节适合强调的批判性判断：
-- 从产品体验上看，Hermes 确实把 memory 这件事推到了更中心的位置；但从结构上看，它仍然属于 personal agent 的延长线，而不是凭空开辟了一个完全不同的物种。某种意义上，它是在现有 personal agent 之上，再叠一层更强的记忆、技能和身份持续性包装。
+这里最值得强调的批判性判断是：从产品体验上看，Hermes 确实把 memory 这件事推到了更中心的位置；但从结构上看，它仍然属于 personal agent 的延长线，而不是凭空开辟了一个完全不同的物种。某种意义上，它是在现有 personal agent 之上，再叠一层更强的记忆、技能和身份持续性包装。
 
-这一节可以帮助听众理解：
-- personal AI 真正吸引人的，不只是“更强模型”，而是“终于开始像一个持续存在的个人软件体”；很多 FOMO 产品不是发明了一个全新的底层结构，而是第一次把旧能力组织成了足够诱人的体验和叙事。
+这一节可以帮助听众理解：personal AI 真正吸引人的，不只是“更强模型”，而是“终于开始像一个持续存在的个人软件体”；很多 FOMO 产品不是发明了一个全新的底层结构，而是第一次把旧能力组织成了足够诱人的体验和叙事。
 
 可选收束句：
 
@@ -1825,8 +1777,7 @@ TPU / GPU 可以保留成一个轻例子：
 可以借此讲清几个判断：
 - AI 转型不是简单加一个聊天框；真正的转型通常发生在原有核心能力和 AI 的结合处。一家公司最终能不能做好 Agent，往往取决于它原本就掌握了哪些资产：用户入口、工作流位置、数据上下文、工具执行面、部署和治理能力。
 
-这一节适合服务于主线：
-- Agent 商业世界不是从零长出来的，而是在原有软件世界、数据世界和工具世界上长出来的。
+这一节服务于一个主线：Agent 商业世界不是从零长出来的，而是在原有软件世界、数据世界和工具世界上长出来的。
 
 
 ### 7.4 一个可选的批判视角：把成熟计算机技术包装成新哲学术语
