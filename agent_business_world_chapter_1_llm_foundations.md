@@ -18,7 +18,7 @@ graph TD
     class F current;
 ```
 
-如果要理解 Agent 为什么会成立，首先不能把大语言模型看成一个只会聊天的黑箱。更准确的理解是：它是一种把海量语言、代码、知识结构和行为模式压缩进参数中的通用生成系统。它最基础的能力，不在于“像人”，而在于它第一次把语言理解、知识压缩、模式匹配和统一接口能力，放进了同一个可编程系统里。
+如果要理解 Agent 为什么会成立，首先不能把大语言模型看成一个只会聊天的黑箱。更准确的理解是：它是一种把海量语言、代码、知识结构和行为模式压缩进参数中的通用生成系统。它最基础的能力，不在于“像人”，而在于它以足够通用、稳定、低门槛的方式，把语言理解、知识压缩、模式匹配和统一接口能力，组织进了同一个可编程系统里。
 
 这一点可以先从最现实的地方切入：价格。今天主流模型的计费方式，通常会把 `input`、`cached input`、`output` 分开定价。这件事本身已经在提示一个重要事实：模型内部并不是一个统一成本的过程。输入被读入、处理、压缩，和输出被逐 token 生成，是两种不同的推理阶段；它们对应不同的计算形态，也决定了为什么上层产品会出现缓存、长上下文成本、响应时间差异、模型选择策略这些工程问题。换句话说，**价格表并不只是商业信息，它本身也在暴露模型运行方式的一部分。**
 
@@ -49,6 +49,14 @@ graph TD
 一旦这套机制被放到多轮对话和长任务里，问题就会更明显。每一轮都把前文完整带回去，会让输入成本和时间迅速膨胀；对 Agent 来说，这不是边角细节，而是结构性约束。因为 Agent 不只是对话，它要保留任务状态、调用工具、读回结果、继续推进。如果没有 cache、prefix reuse、上下文压缩这些工程手段，链路一长，系统就会越来越慢，甚至排队和 prefill 会反过来主导体验。这也是为什么从 Chatbot 走向 Agent 时，系统问题会突然爆炸：**你以为增加的是“智能”，但很多时候真正增加的是上下文负担和运行负担。**
 
 所以，对大语言模型最值得保留的一个抽象，不是“它像不像人”，而是：它提供了一个统一的语言接口，把知识压缩、模式匹配、上下文重写和逐步生成组织成了可编程能力。Agent 之所以可能，不是因为模型突然有了人格，而是因为这套能力第一次足够稳定，能够被放进更长的任务链条里，继续向下接工具、接记忆、接系统、接世界。
+
+## 本章事实核查引用
+
+- OpenAI API 定价页用于支撑 `input / cached input / output` 分开计价，以及 `GPT-5.4` 的每百万 token 价格：OpenAI, [API Pricing](https://openai.com/api/pricing/); OpenAI Developers, [GPT-5.4 model docs](https://developers.openai.com/api/docs/models/gpt-5.4/).
+- `cl100k_base` tokenizer 例子来自 OpenAI `tiktoken`：OpenAI GitHub, [tiktoken openai_public.py](https://github.com/openai/tiktoken/blob/main/tiktoken_ext/openai_public.py).
+- Transformer / self-attention 的基础论文：Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762).
+- RoPE 位置编码的基础论文：Su et al., [RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864).
+- `KV cache`、`prefill / decode`、prompt caching 等推理工程术语的产品化依据：OpenAI, [API Pricing](https://openai.com/api/pricing/); Portkey, [LLM pricing is 100x harder than you think](https://portkey.ai/blog/llm-pricing-2/).
 
 ---
 

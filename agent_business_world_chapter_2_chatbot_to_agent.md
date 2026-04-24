@@ -38,6 +38,13 @@ graph TD
 
 如果把这一章压缩成一句话，那么最准确的表达是：**Chatbot 输出的是回复，Agent 推进的是任务；从前者走向后者，真正增加的不是一点点智能，而是大量系统负担。**
 
+## 本章事实核查引用
+
+- `ReAct` 作为 `reason -> act -> feedback` agent 循环的经典抽象来源：Yao et al., [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629).
+- MCP 用于支撑“模型接入外部工具和世界”的协议化趋势：Anthropic, [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol).
+- Codex 的 computer use、memory、automation、跨应用工具能力用于支撑“从回答走向任务推进”的产品趋势：OpenAI, [Codex for (almost) everything](https://openai.com/index/codex-for-almost-everything/).
+- 推理价格、缓存和长上下文成本用于支撑“Agent 带来上下文和运行负担”的工程判断：OpenAI, [API Pricing](https://openai.com/api/pricing/); Portkey, [AI cost observability](https://portkey.ai/blog/ai-cost-observability-a-practical-guide-to-understanding-and-managing-llm-spend/).
+
 ---
 
 ## 图片生成 Prompts

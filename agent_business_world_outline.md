@@ -425,7 +425,7 @@ graph TD
 - 纯软件、纯 seat 的 Agent 应用，理论上有机会接近传统 SaaS 毛利；但高调用、高推理、长上下文的应用，会先被 inference 成本压毛利；企业 workflow 型应用，软件毛利潜力高，但净利常被销售、交付、客户成功吃掉；硬件混合型入口，毛利通常更低，但入口更强。所以应用层今天的高估值，很多不是因为已经特别赚钱，而是市场在赌：一旦模型成本继续下降，谁先占住高频任务入口，谁就可能把软件预算和一部分劳动预算一起收走。
 
 如果想举几个更有感知的估值 / 收入信号，可作为备讲资料顺手提：
-- Cursor：`2025-11` 融资后估值约 `293 亿美元`，`2026-03` 年化收入据报道超 `20 亿美元`，`2026-04` 又传出在谈 `500 亿美元` 估值。
+- Cursor：`2025-11` 融资后估值约 `293 亿美元`，`2026-03` 报道称其在 `2026-02` 已达到约 `20 亿美元`年化收入，`2026-04` 又传出在谈 `500 亿美元` 估值。
 - Perplexity：`2025-09` 报道估值约 `200 亿美元`，`2025` 年末 ARR 接近 / 超过 `2 亿美元`。
 - Glean：`2025-06` 估值约 `72 亿美元`，ARR 超 `1 亿美元`。
 - Moveworks：`2024-09` ARR 超 `1 亿美元`，`2025-03` 被 ServiceNow 以 `28.5 亿美元` 收购。
@@ -1616,7 +1616,7 @@ TPU / GPU 可以保留成一个轻例子：
 - `2024-09-16` Replit 发布 Replit Agent，这是很早一批把“从描述目标到生成并部署应用”做成产品的例子；这一阶段的特点是 agent 先长在托管环境里，环境、依赖、部署都由平台控制。
 
 5. `2025 上半年：CLI agent 开始先跑在个人电脑上`
-- `2025-03-27` Anthropic 已经公开把 Claude Code 当作“first AI agent”对外讲。这条路线的关键不是 sandbox，而是先借用你的终端、代码仓库、shell 和本地开发环境；也就是说，早期强 agent 往往先拥有比 sandbox 更大的本地权限。
+- `2025` 上半年，Claude Code 作为 agentic coding tool 进入开发者视野。这条路线的关键不是 sandbox，而是先借用你的终端、代码仓库、shell 和本地开发环境；也就是说，早期强 agent 往往先拥有比 sandbox 更大的本地权限。
 
 6. `2025 上半年：cloud agent 也开始成立`
 - `2025-05-16` OpenAI 发布 Codex research preview，明确把 coding agent 往 cloud-based software engineering agent 推；这说明另一条路线也同时成立：agent 不一定只借用你的本地环境，也可以开始拥有自己独立的远程执行环境。
@@ -1628,7 +1628,7 @@ TPU / GPU 可以保留成一个轻例子：
 - `2025-10-06` Codex GA，开始更明确地讲 cloud agent、Slack integration、Codex SDK、admin tools；`2026-04-16` OpenAI 再把 Codex 推到 “for (almost) everything”。背后反映的是：agent 不再只是一个 terminal helper，而是在往多 agent、长任务、后台常驻、跨工具协作发展。
 
 9. `2025 末到 2026：personal agent 重新把执行权拉回个人环境`
-- `2025-11` Clawd / Clawdbot 出现，`2026-01-27` 改名 Moltbot，`2026-01-29` OpenClaw official release。这条线说明：在 cloud agent 之外，另一股力量又把 runtime 拉回个人设备、消息入口和本地环境，只是这次不是单纯脚本，而是常驻、跨渠道、带记忆、带工具层的 personal runtime。
+- 社区资料显示，Clawd / Clawdbot / Moltbot / OpenClaw 这条线在 `2025` 末到 `2026` 初持续演化；更稳的讲法不是卡死每一个改名日期，而是把它看成 personal agent 重新把 runtime 拉回个人设备、消息入口和本地环境的信号。它说明：在 cloud agent 之外，另一股力量又把执行权拉回个人环境，只是这次不是单纯脚本，而是常驻、跨渠道、带记忆、带工具层的 personal runtime。
 
 - 如果要把这条线压成一句：
 - Agent Runtime 的历史，不是“突然发明出来”，而是先有 workflow、RPA、sandbox 这些旧零件，2022-2023 被 ReAct、LangChain、AutoGPT、BabyAGI 这些东西统一点燃，再在 2024-2026 长成今天我们看到的 hosted、CLI、cloud、sandboxed 和 personal runtime 几条分支。

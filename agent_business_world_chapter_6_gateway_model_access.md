@@ -30,11 +30,18 @@ graph TD
 
 当然，这一层也有自己的成本。首先是兼容成本：不同模型、不同 provider 的 API、工具调用、response format、区域策略并不一致。其次是路由与状态成本：fallback、cache、provider health、sticky routing 和 BYOK 都需要持续维护。最后是企业化成本：预算、分项目计费、审计、日志、权限和 tracing 都不是“顺手就有”的功能。Gateway 看上去比模型轻，但绝不是一个很薄的 HTTP 转发层。
 
-这一层的现实玩家非常典型。OpenRouter 代表公共模型路由器；Portkey 更偏企业 AI gateway；LiteLLM 更像开源 / 自托管 gateway；Cloudflare AI Gateway 则说明云平台会如何把这一层吃进自己的基础设施体系。Portkey 在 `2026-02` 公开披露自己已经管理超过 `1.8 亿美元` annualized LLM spend，这说明 Gateway 的价值并不是“又多了一层转发”，而是它开始控制越来越大的模型支出与路由决策。OpenRouter 则把模型厂、推理厂和云平台压成统一的 provider 市场，让价格、延迟和稳定性第一次能在一个入口里被直接比较。
+这一层的现实玩家非常典型。OpenRouter 代表公共模型路由器；Portkey 更偏企业 AI gateway；LiteLLM 更像开源 / 自托管 gateway；Cloudflare AI Gateway 则说明云平台会如何把这一层吃进自己的基础设施体系。Portkey 在 `2026-02` 公开披露自己已经管理超过 `1.8 亿美元` annualized LLM spend，这说明 Gateway 的价值并不是“又多了一层转发”，而是它开始控制越来越大的模型支出与路由决策。OpenRouter 则把模型厂、推理厂和云平台压成统一的 provider 市场，让价格、延迟和稳定性放在同一个入口里被直接比较。
 
 这一层还有一个非常现实、也非常中国化的延伸问题：一旦供给存在地域限制、价格差异和分发鸿沟，它还会继续长出灰色中转市场。对中国大陆用户来说，OpenAI、Anthropic、Google Gemini 等官方支持边界本来就形成了一道门槛；再叠上 credits、促销、区域价差和漏洞窗口，就会自然长出各种小作坊中转站、代充、token 搬运和模型镜像。这些生意的本质通常不是技术创新，而是套利。它们赚的不是“造出更强模型”的钱，而是墙、价差、补贴和制度缝隙的钱。用更通俗的比喻说，它们像是 AI 世界里的“搬砖套利者”。
 
 Gateway 不是配件，而是多模型时代的控制平面。它决定上层应用怎样连接、比较、切换和约束底层供给；而一旦供给足够复杂，它也会进一步长出价格套利、区域中转和灰色分发市场。
+
+## 本章事实核查引用
+
+- OpenRouter 作为公共模型路由器和 provider / pricing / latency 比较入口：OpenRouter, [Models](https://openrouter.ai/models).
+- Portkey 作为企业 AI gateway / control plane 的例子，`2026-02-19` 披露 Series A，并称管理超过 `$180M` annualized LLM spend：Portkey, [Series A funding](https://portkey.ai/blog/series-a-funding). 其后续开源 gateway 公告继续披露 `1T+ tokens`、`120M+ AI requests/day`、`$180M+` annualized AI spend：Portkey, [The Gateway Grew Up](https://portkey.ai/blog/gateway-2-0).
+- LiteLLM 作为开源 / 自托管 gateway 例子：BerriAI GitHub, [LiteLLM](https://github.com/BerriAI/litellm).
+- Cloudflare AI Gateway 作为云平台吃进 gateway 层的例子：Cloudflare Docs, [AI Gateway](https://developers.cloudflare.com/ai-gateway/).
 
 ---
 

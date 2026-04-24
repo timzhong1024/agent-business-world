@@ -46,6 +46,13 @@ graph TD
 
 因此，这一章想建立的最终判断是：**Agent 商业世界不是一个点，而是一条层层相扣、不断重组的价值链。** 用户看到的是一个会做事的 Agent，但产业真正发生变化的地方，是这些层开始被重新分工、重新估值、重新组合。后面几章要讲的入口、应用、工具、记忆、模型、推理与基础设施，并不是一堆并列名词，而是这条链上不同位置的具体展开。
 
+## 本章事实核查引用
+
+- 模型价格、缓存输入、输出价格差异用于支撑“模型 / 推理层向上输出价格、速度和成本结构”的判断：OpenAI, [API Pricing](https://openai.com/api/pricing/).
+- Gateway / 模型接入层的现实玩家示例：OpenRouter, [Models](https://openrouter.ai/models); Portkey, [Series A funding](https://portkey.ai/blog/series-a-funding); BerriAI GitHub, [LiteLLM](https://github.com/BerriAI/litellm); Cloudflare Docs, [AI Gateway](https://developers.cloudflare.com/ai-gateway/).
+- 工具与世界连接层的协议和接口依据：Anthropic, [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol); Google Developers Blog, [Agent2Agent protocol](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/).
+- 算力基础设施例子：NVIDIA, [GB200 NVL72](https://www.nvidia.com/en-us/data-center/gb200-nvl72/); Google Cloud, [TPU v5p documentation](https://docs.cloud.google.com/tpu/docs/v5p); xAI, [Colossus](https://x.ai/colossus/).
+
 ---
 
 ## 图片生成 Prompts

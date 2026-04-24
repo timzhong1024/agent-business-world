@@ -58,6 +58,15 @@ graph TD
 
 工具 / 世界连接层决定 Agent 能不能从“会说”变成“会做”。它既是最接近现实价值的一层，也是最接近真实系统摩擦的一层。模型负责认知，程序负责世界交互；两者拼在一起，才像一个真正落地的 Agent 系统。
 
+## 本章事实核查引用
+
+- MCP 用于支撑“世界操作端点和说明书的标准化暴露”：Anthropic, [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol).
+- A2A 用于支撑 agent / 工具 / 服务之间互操作趋势：Google Developers Blog, [Agent2Agent protocol](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/).
+- Browserbase `2025-06-18` 宣布 `$40M` Series B，用于支撑浏览器执行基础设施赛道；估值约 `$300M` 的说法来自二级市场 / 研究资料，公开官方文未披露估值：Browserbase, [Building the future of web automation](https://www.browserbase.com/blog/series-b-and-beyond); Contrary Research, [Browserbase company profile](https://research.contrary.com/company/browserbase).
+- Portkey `2026-02` 披露管理超过 `$180M` annualized LLM spend，用于支撑 gateway / control plane 作为真实调用控制点：Portkey, [Series A funding](https://portkey.ai/blog/series-a-funding).
+- Plaid `2026-02` 员工股份交易 / liquidity round 对应约 `$8B` 估值，用于支撑金融数据入口价值：TechCrunch, [Plaid valued at $8B in employee share sale](https://techcrunch.com/2026/02/26/plaid-valued-at-8b-in-employee-share-sale/).
+- Stripe / Plaid / GitHub / Salesforce 等接口平台的官方开发者入口：Stripe, [Developers](https://docs.stripe.com/); Plaid, [Docs](https://plaid.com/docs/); GitHub, [Docs](https://docs.github.com/); Salesforce, [Agentforce](https://www.salesforce.com/agentforce/).
+
 ---
 
 ## 图片生成 Prompts

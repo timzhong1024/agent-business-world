@@ -34,6 +34,13 @@ graph TD
 
 如果把整场分享压缩成一句总主线，那就是：**Agent 真正值得关注的，不是它又多了多少新词，而是它正在把大模型、软件系统、行业流程和商业需求重新接起来。**
 
+## 本章事实核查引用
+
+- ChatGPT 公开发布于 `2022-11-30`，用于支撑“自 2022 年底 ChatGPT 进入大众视野”的时间线：OpenAI, [Introducing ChatGPT](https://openai.com/index/chatgpt/).
+- Codex 正在从 coding agent 扩展到更贴身的工作代理，`2026-04-16` OpenAI 宣布 Codex 支持 computer use、memory preview、跨应用工具和自动继续任务：OpenAI, [Codex for (almost) everything](https://openai.com/index/codex-for-almost-everything/).
+- Deep Research 作为调研型 Agent 产品形态的例子：OpenAI, [Introducing deep research](https://openai.com/index/introducing-deep-research/); Perplexity, [Deep Research](https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research); Google, [Gemini Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/).
+- `MCP`、`A2A` 等协议层变化用于支撑“产品表面向下牵动系统和基础设施”的产业链判断：Anthropic, [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol); Google Developers Blog, [Agent2Agent protocol](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/).
+
 ---
 
 ## 图片生成 Prompts

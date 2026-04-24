@@ -40,9 +40,19 @@ graph TD
 
 从商业判断看，应用层真正的竞争，不是谁先把模型塞进产品，而是谁先把一个高频任务做成“用户愿意反复托付”的东西。也正因此，应用层公司表面上卖的是 coding、research、support、meeting、personal AI，底下依赖的却普遍是模型与推理、gateway、工具连接、上下文与记忆，以及入口层本身。它们真正的价值判断逻辑，也不只是“功能能不能做出来”，而包括：能不能占住高频任务入口，能不能形成稳定闭环，能不能降低对底层模型成本的被动暴露，以及能不能把一部分软件预算甚至人工预算收上来。
 
-这也是为什么应用层今天的高估值，很多并不是基于已兑现净利，而是基于一种更长的预期：如果推理成本继续下降，如果用户托付持续增强，如果 AI 产品开始从软件预算走向劳动预算，那么谁先占住任务入口，谁就可能拿到极大的商业杠杆。具体数字已经很夸张：Cursor 在 `2025-11` 融资后估值约 `293 亿美元`，`2026-03` 年化收入据报道超过 `20 亿美元`，`2026-04` 又传出正在谈 `500 亿美元` 估值；Perplexity 在 `2025-09` 的报道估值约 `200 亿美元`；Glean 在 `2025-06` 估值约 `72 亿美元`；Sierra 在 `2025-09` 估值约 `100 亿美元`；Moveworks 在 `2025-03` 被 ServiceNow 以 `28.5 亿美元` 收购。这些数字说明，市场已经在按“任务入口”和“工作替代潜力”给应用层重新定价。
+这也是为什么应用层今天的高估值，很多并不是基于已兑现净利，而是基于一种更长的预期：如果推理成本继续下降，如果用户托付持续增强，如果 AI 产品开始从软件预算走向劳动预算，那么谁先占住任务入口，谁就可能拿到极大的商业杠杆。具体数字已经很夸张：Cursor 在 `2025-11` 融资后估值约 `293 亿美元`，`2026-03` 报道称其在 `2026-02` 已达到约 `20 亿美元`年化收入，`2026-04` 又传出正在谈 `500 亿美元` 估值；Perplexity 在 `2025-09` 的报道估值约 `200 亿美元`；Glean 在 `2025-06` 估值约 `72 亿美元`；Sierra 在 `2025-09` 估值约 `100 亿美元`；Moveworks 在 `2025-03` 被 ServiceNow 以 `28.5 亿美元` 收购。这些数字说明，市场已经在按“任务入口”和“工作替代潜力”给应用层重新定价。
 
 应用层不是一个薄薄的展示层，而是 Agent 商业世界最先被看见、也最先被高估的一层。它表面上在卖结果，内部却不断向下吞 runtime、记忆、工具和推理能力；它今天的估值，也不是因为它已经特别赚钱，而是因为市场在赌：谁先被托付任务，谁就更可能成为下一轮软件世界的默认工作界面。
+
+## 本章事实核查引用
+
+- Cursor / Anysphere 在 `2025-11` 融资后估值约 `$29.3B`，`2026-03` 报道称其 `2026-02` 年化收入超过 `$2B`，`2026-04` 报道称正洽谈 `$50B` 估值融资：TechCrunch, [Cursor raises $2.3B at $29.3B valuation](https://techcrunch.com/2025/11/13/coding-assistant-cursor-raises-2-3b-5-months-after-its-previous-round/); TechCrunch, [Cursor reportedly surpassed $2B annualized revenue](https://techcrunch.com/2026/03/02/cursor-has-reportedly-surpassed-2b-in-annualized-revenue/); TechCrunch, [Cursor in talks at $50B valuation](https://techcrunch.com/2026/04/17/sources-cursor-in-talks-to-raise-2b-at-50b-valuation-as-enterprise-growth-surges/).
+- Claude Code、OpenAI Codex、Replit Agent 作为 coding agent 例子：Anthropic, [Claude Code](https://www.anthropic.com/claude-code); OpenAI, [Codex](https://openai.com/codex/); Replit, [Replit Agent](https://blog.replit.com/introducing-agent).
+- ChatGPT Deep Research、Perplexity Deep Research、Gemini Deep Research 作为 research agent 例子：OpenAI, [Introducing deep research](https://openai.com/index/introducing-deep-research/); Perplexity, [Deep Research](https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research); Google, [Gemini Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/).
+- Sierra `2025-09` 报道融资后估值约 `$10B`：CNBC, [Bret Taylor's Sierra is the latest $10 billion AI startup](https://www.cnbc.com/2025/09/04/bret-taylor-sierra-ai-startup-salesforce-openai.html); TechCrunch, [Sierra raises $350M at a $10B valuation](https://techcrunch.com/2025/09/04/bret-taylors-sierra-raises-350m-at-a-10b-valuation/).
+- Moveworks 在 `2025-03` 被 ServiceNow 宣布以约 `$2.85B` 现金加股票收购，并在后续完成交易：ServiceNow IR, [ServiceNow completes acquisition of Moveworks](https://investor.servicenow.com/news/news-details/2025/ServiceNow-completes-acquisition-of-Moveworks/default.aspx); Axios, [ServiceNow paying $2.85B to buy Moveworks](https://www.axios.com/2025/03/10/servicenow-moveworks-acquisition).
+- Manus 在 `2025-04` 报道融资估值约 `$500M`，`2025-12` 有报道称 Meta 以 `$2B+` 收购 / 交易估值区间进入 `$2B-$2.5B`：TechCrunch, [Manus reportedly gets funding at $500M valuation](https://techcrunch.com/2025/04/25/chinese-ai-startup-manus-reportedly-gets-funding-from-benchmark-at-500m-valuation/); Axios, [Meta's deal for Manus AI could be worth $2.5B](https://www.axios.com/2025/12/30/meta-manus-ai).
+- Zoom FY2026 整体毛利约 `77%`、GAAP operating margin 约 `23%`：Zoom Investor Relations, [FY2026 financial results PDF](https://investors.zoom.us/node/14151/pdf).
 
 ---
 

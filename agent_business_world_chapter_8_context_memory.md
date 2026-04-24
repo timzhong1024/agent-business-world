@@ -40,6 +40,14 @@ class A,B,C,D,E,F,G,I neutral;
 
 上下文 / 记忆层最重要的，不是让 AI 看起来更像人，而是决定一个 Agent 会不会在长任务里持续失忆。它既是很多热门概念争夺的位置，也是整个 Agent 世界里最容易从“助手附属功能”长成“长期观察和上下文基础设施”的一层。
 
+## 本章事实核查引用
+
+- Glean 代表企业知识入口，`2025-06` 报道估值约 `$7.2B`：TechCrunch, [Enterprise AI startup Glean lands a $7.2B valuation](https://techcrunch.com/2025/06/10/enterprise-ai-startup-glean-lands-a-7-2b-valuation/).
+- Perplexity 代表“检索 + 推理 + 上下文组织”的产品化，`2025-09` 报道估值约 `$20B`：TechCrunch, [Perplexity reportedly raised $200M at $20B valuation](https://techcrunch.com/2025/09/10/perplexity-reportedly-raised-200m-at-20b-valuation/).
+- Mem0 作为 memory pipeline / long-term memory layer 的工程化例子：Mem0, [Docs](https://docs.mem0.ai/); GitHub, [mem0ai/mem0](https://github.com/mem0ai/mem0).
+- Rewind 作为 personal memory / personal context 例子：Rewind, [Product site](https://www.rewind.ai/).
+- Codex `2026-04-16` 的 memory preview、自动继续任务和跨工具上下文，用于支撑“记忆层与入口层、Personal AI 拉动”的产品趋势：OpenAI, [Codex for (almost) everything](https://openai.com/index/codex-for-almost-everything/).
+
 ---
 
 ## 图片生成 Prompts

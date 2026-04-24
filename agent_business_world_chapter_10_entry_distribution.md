@@ -36,6 +36,14 @@ graph TD
 
 入口层不是 Agent 世界的外围装饰，而是它真正开始接触用户意图和持续上下文的地方。后面要讲的应用、记忆和工具，很多时候都是在入口成立之后才开始有了可持续价值。
 
+## 本章事实核查引用
+
+- ChatGPT 作为主动入口的代表，公开发布于 `2022-11-30`：OpenAI, [Introducing ChatGPT](https://openai.com/index/chatgpt/).
+- Codex `2026-04-16` 的 desktop app、computer use、memory、跨应用工具和自动继续任务，用于支撑“桌面入口 + 被动上下文采集 / 个人工作代理”的趋势：OpenAI, [Codex for (almost) everything](https://openai.com/index/codex-for-almost-everything/).
+- Zoom AI Companion 用于支撑会议与沟通入口：Zoom, [Zoom AI Companion](https://www.zoom.com/en/products/ai-assistant/).
+- Meta 在 `2025-09-17` 发布 Meta Ray-Ban Display 与 Meta Neural Band，用于支撑智能眼镜 / 可穿戴入口：Meta, [Meta Ray-Ban Display: AI Glasses With an EMG Wristband](https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/).
+- Android XR / Gemini on headsets and glasses 用于支撑 AI 进入 XR、眼镜和头显入口：Google, [Android XR](https://blog.google/products-and-platforms/platforms/android/android-xr/); Google, [Android XR and Gemini for glasses/headsets](https://blog.google/products-and-platforms/platforms/android/android-xr-gemini-glasses-headsets/).
+
 ---
 
 ## 图片生成 Prompts

@@ -40,6 +40,13 @@ graph TD
 
 模型 / 推理层向上输出的，不只是智能能力，还包括价格、速度、稳定性和可组合性。这些因素一起决定了上层产品到底能长成什么样，也决定了后面为什么会自然长出 gateway、runtime 和多模型策略。
 
+## 本章事实核查引用
+
+- OpenAI 官方价格页用于支撑 `GPT-5.4` 的 `input / cached input / output` 分开定价，以及“价格表本身影响产品设计”的判断：OpenAI, [API Pricing](https://openai.com/api/pricing/); OpenAI Developers, [GPT-5.4 model docs](https://developers.openai.com/api/docs/models/gpt-5.4/).
+- OpenRouter 模型市场用于支撑“多模型、多 provider、价格和能力并存比较”的现实：OpenRouter, [Models](https://openrouter.ai/models).
+- Portkey 的 LLM spend / pricing 数据用于支撑“模型价格、成本归因和企业控制面变复杂”的判断：Portkey, [LLM pricing is 100x harder than you think](https://portkey.ai/blog/llm-pricing-2/).
+- 中国模型 / 推理平台的角色拆分可参考各自官方入口：阿里云百炼, [Model Studio](https://www.alibabacloud.com/help/en/model-studio/); 火山引擎, [火山方舟](https://www.volcengine.com/product/ark); DeepSeek, [API Docs](https://api-docs.deepseek.com/).
+
 ---
 
 ## 图片生成 Prompts
