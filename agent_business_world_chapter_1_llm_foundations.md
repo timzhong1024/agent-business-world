@@ -52,7 +52,9 @@ graph TD
 
 ## 本章事实核查引用
 
-- OpenAI API 定价页用于支撑 `input / cached input / output` 分开计价，以及 `GPT-5.4` 的每百万 token 价格：OpenAI, [API Pricing](https://openai.com/api/pricing/); OpenAI Developers, [GPT-5.4 model docs](https://developers.openai.com/api/docs/models/gpt-5.4/).
+- OpenAI API 定价页用于支撑 `input / cached input / output` 分开计价，以及 `GPT-5.5`、`GPT-5.4` 的每百万 token 价格：OpenAI, [API Pricing](https://openai.com/api/pricing/); OpenAI Developers, [GPT-5.4 model docs](https://developers.openai.com/api/docs/models/gpt-5.4/).
+- Anthropic 与 DeepSeek 的官方定价页用于补充跨厂商对比：Anthropic, [Claude pricing](https://docs.anthropic.com/en/docs/about-claude/pricing); Anthropic, [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7); DeepSeek API Docs, [Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing); DeepSeek API Docs, [Change Log: DeepSeek-V4](https://api-docs.deepseek.com/updates).
+- xAI 的官方文档用于补充 `Grok 4.20 Multi-Agent` 的计费逻辑：xAI, [API overview](https://x.ai/api); xAI Docs, [Models and Pricing](https://docs.x.ai/developers/models); xAI Docs, [Multi-agent](https://docs.x.ai/developers/model-capabilities/text/multi-agent).
 - `cl100k_base` tokenizer 例子来自 OpenAI `tiktoken`：OpenAI GitHub, [tiktoken openai_public.py](https://github.com/openai/tiktoken/blob/main/tiktoken_ext/openai_public.py).
 - Transformer / self-attention 的基础论文：Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762).
 - RoPE 位置编码的基础论文：Su et al., [RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864).
@@ -71,7 +73,7 @@ graph TD
 
 ### 图 1.2 从价格看到推理结构
 
-在此基础上，为这一部分生成一张横版 slide like image，风格优先做成 **realistic pricing and inference dashboard**。主题是：**价格表背后暴露了模型内部的不同推理阶段**。画面像一个 OpenAI / OpenRouter 风格的 pricing page 或 inference control panel，顶部是模型名和 usage summary，中间是一张非常清楚的表格，至少包含 `Input`、`Cached Input`、`Output` 三列，以及价格、latency、usage notes 这类短标签；旁边用简洁的流向结构表示这三类成本对应不同推理阶段。要求界面真实、文字清楚、布局专业。
+在此基础上，为这一部分生成一张横版 slide like image，风格优先做成 **realistic pricing and inference dashboard**。主题是：**价格表背后暴露了模型内部的不同推理阶段**。画面像一个 OpenAI / OpenRouter 风格的 pricing page 或 inference control panel，顶部是模型名和 usage summary，中间是一张非常清楚的表格，至少包含 `Model`、`Input`、`Cached Input`、`Output` 三列，以及价格、latency、usage notes 这类短标签；旁边用简洁的流向结构表示这三类成本对应不同推理阶段。要求界面真实、文字清楚、布局专业。表格里的模型请明确换成这五个，并尽量按官方 API 定价精确显示：`GPT-5.5`（`$5.00 / 1M input`, `$0.50 / 1M cached input`, `$30.00 / 1M output`，OpenAI pricing page 当前标注为 `coming soon`）、`GPT-5.4`（`$2.50 / 1M input`, `$0.25 / 1M cached input`, `$15.00 / 1M output`）、`Claude Opus 4.7`（`$5 / 1M input`, 如需表现缓存可用弱化脚注说明 `prompt caching can reduce cost`, `$25 / 1M output`）、`DeepSeek V4 Pro`（`$1.74 / 1M input cache miss`, `$0.145 / 1M input cache hit`, `$3.48 / 1M output`）、`Grok 4.20 Multi-Agent`（不要把它画成一个虚假的固定单价模型卡；请明确表现为“token 费率参照 `Grok 4.20` 的 `$2.00 / 1M input`、`$6.00 / 1M output`，但真实请求会把 leader agent 与 sub-agents 的 `input / reasoning / output tokens` 全部计费，并额外叠加工具调用成本”，可在 notes 或 side panel 中补 `web_search / x_search / code_execution: $5 / 1k calls`）。请把 `input / cached input / output` 的价格差异做得一眼可比，并让观众能直接看出：同样是“调用一个模型”，背后其实对应不同推理阶段和不同成本结构；而 multi-agent 不是简单更贵，而是把 token 计费对象和 tool cost 一起放大。
 
 ### 图 1.3 文本如何进入模型
 
@@ -81,6 +83,10 @@ graph TD
 
 在此基础上，为这一部分生成一张横版 slide like image，但风格改成 **高质量数学动画静帧风格**，强调抽象、清晰、强解释力，同时保留整套 deck 的冷白、深蓝、青色体系。请明确采用一个**教学化简假设**：把 token 表示画成 **2 维或 3 维向量空间** 里的点和箭头，让观众一眼能看出“投影、比较、加权组合、生成新表示”这条路径。主题是：**表示经过投影、比较和加权组合，被重写成新的表示**。画面不要做成产品 UI，而要像一张精致的数学可视化教学画面：左侧是 2D/3D 中的几个输入向量和点，中央是投影后的几何空间、连接线、相似度比较、加权关系、流动箭头，右侧是聚合后的新表示。可以出现少量清晰数学可视化元素，如坐标轴、向量箭头、点云、矩阵块、连接权重，但不要塞复杂公式，不要过多文字。可以参考模型已知的 **3Blue1Brown 式数学解释视频** 所常见的视觉语言：克制背景、清楚几何层次、优雅运动感、强解释性的空间布局，但不要模仿具体某一帧，不要出现 logo 或频道元素。重点是把 attention 讲成一种优雅的几何与线性代数过程，画面应当抽象、克制、结构清楚，像一张顶级数学解释视频中的关键静帧。
 
+### 图 1.4A 单个 token 如何读取上下文
+
+在此基础上，为这一部分再生成一张横版 slide like image，风格优先做成 **educational attention explainer**，并继续沿用整套 deck 的冷白、深蓝、青色体系。主题是：**从单个 token 的视角，看 attention score 如何作用在 value vectors 上，生成新的 token 表示**。画面请明确采用“单个 query token 更新自己”的教学视角，而不是展示一整层的全局矩阵。左侧是一个被高亮的 current token，显示它的 `Q` 向量；中间是一排 context tokens，每个 token 都带有自己的 `K` 和 `V` 表示，其中 `Q` 先与各个 `K` 形成 attention scores，再经过 softmax 变成一组清晰的 normalized weights；右侧重点展示这些权重如何分别乘到对应的 `V` 向量上，并最终汇总成一个 updated token representation。构图要让人一眼看懂“先打分，再归一化，再对 V 做加权求和”这条路径。可以使用少量短英文标签，如 `current token`, `Q`, `K`, `V`, `attention score`, `softmax`, `weighted sum`, `updated representation`，也可以用简洁数字权重如 `0.62`, `0.25`, `0.13`。不要塞复杂公式，不要做成抽象海报，也不要只画几何空间而缺少步骤感；整体更像一张高质量教学解释页，专门解决“V space 与 attention score 相乘”这一步为什么成立、是怎么发生的。
+
 ### 图 1.5 叠层与位置机制
 
 在此基础上，为这一部分生成一张横版 slide like image，风格优先做成 **layered model inspector UI**。主题是：**token 的表示在层与层之间被持续重写，位置被编码进几何结构**。画面像一个分层 inspector：中间是 vertically stacked layers，某一个 token 在每一层的表示都不同；右侧有抽象旋转位置结构、不同频率的环形几何图，用于隐含 RoPE 直觉。整体重点是“逐层重写”和“位置进入几何结构”。
@@ -88,3 +94,13 @@ graph TD
 ### 图 1.6 Prefill、Decode 与 Agent 负担
 
 在此基础上，为这一部分生成一张横版 slide like image，风格优先做成 **inference operations dashboard**。主题是：**输入阶段和输出阶段有不同的计算代价，长任务会把这种差异放大**。画面像一个推理运维面板：左侧是 long input context and queue，中央是 heavy prefill compute block，右侧是 token-by-token decode stream，旁边有 cache hits、latency strip、context growth indicators。整体像真实推理监控 / analysis dashboard，突出 Agent 时代的运行负担，而不是抽象光效。
+
+### 图 1.6A Decode 如何生出一个 token
+
+在此基础上，为这一部分再生成一张横版 slide like image，风格优先做成 **educational prefill-vs-decode explainer**，继续沿用整套 deck 的冷白、深蓝、青色体系。主题是：**prefill 是整段前缀位置一起更新 hidden states，而 next-token prediction 只发生在最后一层对最后一个位置做 `LM head` 投影之后；decode 则是在 KV cache 基础上重复这个“更新当前最后位置表示 -> 投影到词表 -> 采样下一个 token”的过程**。画面请明确分成左右两部分，但保持一张完整教学图。
+
+左半部分是 `prefill`：一排 prefix tokens 同时进入 transformer stack，清楚表现“整段并行前向”；重点不是把每一层都画成在“预测下一个 token”，而是要画出**每个位置在每一层都只是在更新自己的 hidden state / representation**。可以把中间主体画成多层 stack，让每个 token 在层内逐步变成更深的 hidden state。到了最右侧，只对**最后一层、最后一个 prefix position** 单独接一个 `LM head` / `unembedding` 模块，并在这里明确产生 `logits over vocabulary`、`softmax`、`sample / argmax`，最终得到真正的 `next token`。前面各个位置如果也要出现 logits，请明确做成浅色参考态，表达“训练时每个位置都对应 next-token target，但在推理继续往后生成时，真正被拿来扩展序列的是最后一个位置的 logits”。请避免把“层内 hidden state 更新”和“最终 next-token prediction”混成一件事。
+
+右半部分是 `decode`：把刚选出的 `next token` 追加到序列末尾，成为新的 current last position；历史 prefix 不再整段重算，而是以 `KV cache` 形式留在旁边。新的 token embedding 连同位置编码进入 transformer stack，只对这个新位置做一小步前向；它在每一层读取历史 `K/V cache` 并更新自己的 hidden state，最后再经过同一个 `LM head` / `unembedding` 得到下一次的 vocabulary logits，再采样出再下一个 token。请把这个逻辑画成清楚的一条链：`token embedding -> transformer layers -> final hidden state at last position -> LM head / vocab projection -> softmax -> next token`。同时用一条轻量、不喧宾夺主的箭头，从刚生成的 token 指向下一次 decode step，表达 autoregressive continuation。
+
+可以使用少量短英文标签，如 `prefill`, `parallel forward`, `hidden states`, `last position`, `LM head`, `unembedding`, `vocab logits`, `softmax`, `sample`, `next token`, `decode`, `KV cache`, `reuse cache`, `autoregressive`。如果愿意带一点数学味道，可以非常克制地标一个小公式，例如 `logits = h_L W_U` 或 `p(x_{t+1}|x_{\le t}) = softmax(h_t W_U)`，用来说明“最后隐藏状态如何映射到词表分布”；但不要塞复杂推导。不要做成运维 dashboard，也不要只画抽象箭头；整体更像一张高质量教学解释页，专门帮助听众理解：Transformer 层本身主要负责更新表示，而“预测下一个 token”是在最后位置的最终 hidden state 经过词表投影后才发生；prefill 和 decode 的差别，不在于是否做 next-token prediction，而在于一次并行算完整前缀，还是依靠 KV cache 只增量计算最后一个位置。
